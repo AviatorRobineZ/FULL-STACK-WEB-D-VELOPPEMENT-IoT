@@ -1,0 +1,216 @@
+:root{
+    --color-primary : #1B2A4A;
+    --color-accent : #D35400 ;
+    --color-bg : #F8F9FA;
+    --color-text : #2D3436;
+    --color-iot : #148F77;
+    --font-heading : 'Montserrat', sans-serif;
+    --font-body : 'Inter', sans-serif;
+    --spacing-section : 80px;
+    --border-radius : 12px;
+    --shadow : 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-body);
+}
+header {
+    position: sticky;
+    top: 0;
+    background: var(--color-primary);
+    z-index: 1000;
+   
+}
+h1, h3 {
+    font-family: var(--font-heading);
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction:column;
+    gap : 2rem;
+    list-style : none;
+    
+    
+}
+nav li{
+    display: none;
+}
+nav::before {
+    content: "\2630";
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+}
+nav:hover li{
+    display: block;
+    padding: 10px;
+}
+nav a {
+    color: var(--color-bg);
+    text-decoration: none;
+    position: relative;
+    width:100%;
+    justify-content: flex-end;
+}
+ nav a:hover{
+    color: var(--color-accent);
+    
+
+ }
+nav a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width:100%;
+    height: 2px;
+    bottom: -4;
+    left: 0;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+nav a:hover::after{
+    transform:scaleX(1);
+    transform-origin: bottom left;
+}
+
+#competences , #projets,
+#IoT-demo , #contact{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+}
+#accueil img{
+    width:200px;
+    border-radius: var(--border-radius);
+    margin-top:50px;
+}
+
+#accueil {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+    background-image: url(img.jpeg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-bg);
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);    
+        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#accueil h1{
+    animation: fadeInUp 3s ease forwards;
+    margin-top: 0;
+}
+#accueil h3{
+    overflow:hidden;
+    animation: 
+                typing 10s steps(30, start) forwards,
+                blink-caret 2s step-end infinite;
+}
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
+}
+
+
+#projets h1{
+    margin-top:0;
+}
+#projets article {
+    width:400px;
+    margin-top:10px;
+    padding:1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+#projets article:hover {
+    transform : translateY(-8px);
+    transition: all 0.3 ease;
+}
+img {
+    position: relative;
+    
+}
+
+#contact textarea{
+    width: 200px;
+    height: 100px;
+
+}
+
+button {
+    border-radius: var(--border-radius);
+    border: none;
+    width: 200px;
+    height: 30px;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    box-shadow: var(--shadow);
+    
+}
+button:hover {
+    background-color: var(--color-accent);
+    color: black;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--color-primary);
+}
+footer a{
+    text-decoration: none;
+}
+footer a:hover {
+    color:var(--color-accent);
+    
+
+}
+
+@media (min-width: 768px) {
+    nav ul{
+        flex-direction: row;
+        justify-content: flex-end;
+        }   
+    #projets{
+        grid-template-columns: (2, 1fr);
+    }
+    #accueil {
+        
+    }
+    nav::before{display: none;}
+    nav {display:flex; gap: 20px;}
+    nav li { display: block;}
+}
+
+@media (min-width: 1200px){
+    #projets {
+        grid-template-columns: (3, 1fr);
+    }
+    body {
+        font-size: 18px;
+    }
+}
+
+
