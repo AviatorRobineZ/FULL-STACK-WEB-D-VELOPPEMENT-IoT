@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Mamy Lainé Soumaoro, développeur web IoT">
+    <title>Mamy Lainé Soumaoro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta property="og:title" content="Mamy Lainé Soumaoro - Portfolio">
+    <meta property="og:description" content="Découvrez le portfolio de Mamy Lainé Soumaoro.">
+    <meta property="og:image" content="myself.jpeg">
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    
+    
+    <div id="content" style="display:none;">
+        <header aria-label="En-tete du site">
+            <h1><span>LAINÉ MAMY SOUMAORO </span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#competences"> Competences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#IoT-demo">IoT-Demo</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li> <a href="mon-cv.pdf" aria-label="Telecharger mon cv en format pdf" class="mon-cv">Telecharger mon CV</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle">Light</button>
+        </header>
+        
+        <main>
+            <section id="accueil">
+                <h1>Accueil</h1>
+                <h3>My world</h3>
+                <p> Bienvenue sur mon portfolio. Je suis Mamy Laine Soumaoro etudiante L3 en System d'information au GCTU, pationnee par le developement web et
+                    les technologies IoT. Je concois des solutions numeriques modernes et fonctionnelles.
+                </p>
+                <img src="myself.jpeg" alt="Mamy Soumaoro" width="100%" >
+            </section>
+
+            <section id="competences">
+                <h1>Competences</h1>
+                <ol>
+                    <li>Frontend
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </li>
+                    <li>Backend
+                        <ul>
+                            <li>PHP</li>
+                            <li>Laravel</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </li>
+                    <li>IoT</li>
+                    <li>UI/UX
+                        <ul>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                        </ul>
+                    </li>
+                    <li>Graphic Design
+                        <ul>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="projets">
+                <h1>Projets</h1>
+                <div>
+                    <article>
+                        <h3>E-Commerce</h3>
+                        <img src="smell-good.png" alt="small-good" width="100%"  >
+                        <p>Sites de vente de parfum complet.</p>
+                    </article>
+                    <article>
+                        <h3>Registration Book</h3>
+                        <img src="registration.png" alt="GIISDEC Registration Book" width="100%">
+                        <p>Cahier de Presence digital. Pour enregistrer l'heure d'arriver et de sortie des employees, celui des visiteurs et les lettres entrant. </p>
+                    </article>
+                    <article>
+                        <h3>Flyer design</h3>
+                        <img src="LD.jpg" alt="LD" width="100%">
+                        <p>Un visuel de representation de vente de nouriture</p>
+                    </article>
+                    <article>
+                        <h3> UX/UI Design</h3>
+                        <img src="figma.png" alt="Figma Design" width="100%">
+                        <p>Le design d'un site d'organique utilisant Figma</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="IoT-demo">
+                <h1>IoT-Demo</h1>
+                <p>Cette section est réservée à une future démonstration IoT.
+                Une simulation interactive sera ajoutée prochainement.</p>
+                
+
+                <select id="vitesse" onchange="changerVitesse()">
+                    <option value="3000"> Lent (5s)</option>
+                    <option value="2000"> Normal (2s)</option>
+                    <option value="200">Rapide (500ms)</option>
+                </select> 
+                <button
+                        onclick="iotChart.options.animation = false; iotChart.update();">
+                        Stop        
+                </button>
+                <button
+                        onclick="iotChart.options.animation = true; iotChart.update();">
+                        Start
+                </button>   
+                
+            
+                <canvas id="iotChart"></canvas>
+            </section>
+
+            <section id="contact">
+                <h1>Contact</h1>
+                <form>
+                    <label>Name: <span>Laine Mamy Soumaoro</span></label> <br>
+                    <label>Email: lainemamysoumaoro@gmail.com</label> <br>
+                    <label>Message</label> <br>
+                    <textarea placeholder="Enter a message here" >Enter a message here</textarea> <br>
+                    <button>Submit</button>
+                </form>
+            </section>
+            
+        </main>
+
+        <hr><footer>
+            <div>
+                <p>© 2026 <span>Mamy Laine Soumaoro</span>. All right reserved</p>
+            </div>
+            <a href="https://www.linkedin.com/in/lainé-mamy-soumaoro-103401362?utm_source=share_via&utm_contentprofile&utm_medium=member_android" aria-label="Acceder a mon Profile Linkedin">Linkedin</a> <br>
+            <a href="https://github.com/Felicia224-K" aria-label="Acceder a mon profile github">GitHub</a>
+        </footer>
+        
+    
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
